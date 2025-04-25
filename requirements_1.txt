@@ -113,3 +113,4 @@ pip install urllib3==2.3.0
 pip install uvicorn==0.34.0
 pip install watchdog==6.0.0
 pip install yarl==1.18.3
+pip install zstandard==0.23.0

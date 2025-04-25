@@ -1,6 +1,5 @@
 # iMPORTAR AS BIBLIOTECAS
 import streamlit as st
-import fitz
 from groq import Groq
 
 # Configurar chave da Groq

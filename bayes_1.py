@@ -21,7 +21,7 @@ def chat_with_groq(prompt, context):
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
         messages=[
-            {"role": "system", "content": "Você é um assistente que responde com base em documentos fornecidos."},
+            {"role": "system", "content": "Você é um assistente que responde com base em documentos fornecidos, preciso que você interprete os dados de uma tabela em pdf, e recomende o computador com as melhores peças que atenda as necessidades do usuário, sempre tome sua decisões visando o melhor para o cliente. Explique o por quê de ter escolhido tal componente. Caso o usuário não forneça a finalidade de uso do computador, sempre questione, por exemplo: Você deseja um computador para jogos? Trabalho? Edição de vídeo? A partir da resposta escolha as peças abordadas nas instruções de escolha contidas no arquivo PDF."},
             {"role": "user", "content": f"{context}\n\nPergunta: {prompt}"}
         ]
     )

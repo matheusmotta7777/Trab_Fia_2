@@ -30,7 +30,7 @@ def chat_with_groq(prompt, context):
     
 # CRIAR A INTERFACE
 def main():
-    st.title("O nome do meu sistema inteligente")
+    st.title("Busca PC")
     # Incluir uma imagem de acordo ao sistema escolhido
     with st.sidebar:
         st.header("UPLoader Files")
@@ -39,8 +39,9 @@ def main():
         text = extract_files(uploader)
         st.session_state["document-text"] = text
     user_input = st.text_input("Digite a sua pergunta")
-
-
+    if user_input and "document_text" in st.session_state:
+        response = chat_with_groq(user_input, st.session_state["document_text"])
+        st.write("Resposta:", response)
 
 if __name__ == "__main__":
      main()
